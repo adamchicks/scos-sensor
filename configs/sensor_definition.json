@@ -1,10 +1,25 @@
 {
-    "id": "testsensor.sms.internal",
+    "id": "greyhound7.sms.internal",
     "antenna": {
-        "model": "L-com HG3512UP-NF"
+        "id": "MobileMark Base Station Antenna",
+        "model": "BS698XL3",
+        "type": "dipole",
+        "low_frequency" : 698000,
+        "high_frequency": 870000,
+        "polarization" : "vertical",
+        "gain": 3,
+        "vertical_beam_width": 30,
+        "voltage_standing_wave_ratio": 1.5
     },
     "receiver": {
-        "model": "Ettus USRP B210"
+        "model": "Ettus USRP B210",
+        "low_frequency": 70000,
+        "high_frequency": 6000000,
+        "a2d_bits": 12
     },
-    "host_controller": "Intel NUC"
+    "Preselector":{
+        "rf_paths":[{"low_frequency_passband": 698000, "high_frequency_passband": 809000, "low_frequency_stopband": 642500, "high_frequency_stopband": 864500}]
+    },
+    "host_controller": "Intel NUC",
+    "mobile": 0
 }
